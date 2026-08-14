@@ -1,6 +1,6 @@
 # Database Driver Installation
 
-The following relates to NoSQL & Relational Databases only, meaning this can be ignored if either RocksDB/SQLite are being used (both included in TaskTide [release zips](https://github.com/BrenKenna/TaskTide/releases)). The JDBC drivers for databases like Postgres, MySQL, MariaDB etc can downloaded from preferred source or from the collection maintained by JetBrains [linked here](https://www.jetbrains.com/datagrip/jdbc-drivers/#), and an example installaion is [provided here](/Database-Driver-Installation.md#1-install-required-relational-database-driver).
+The following relates to NoSQL & Relational Databases only, meaning this can be ignored if either RocksDB/SQLite are being used (both included in TaskTide [release zips](https://github.com/BrenKenna/TaskTide/releases)). The JDBC drivers for databases like Postgres, MySQL, MariaDB etc can downloaded from preferred source or from the collection maintained by JetBrains [linked here](https://www.jetbrains.com/datagrip/jdbc-drivers/#), and an example installaion is [provided here](Database-Driver-Installation.md#1-install-required-relational-database-driver).
 
 <br>
 <br>
