@@ -2,11 +2,6 @@ name: Publish Documentation
 
 on:
   push:
-    paths:
-      - "mkdocs.yml"
-      - "tasktide/docs/javadoc/**"
-      - ".github/workflows/publish-docs.yml"
-  
   workflow_dispatch:
 
 

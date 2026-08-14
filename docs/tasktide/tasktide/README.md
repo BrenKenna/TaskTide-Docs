@@ -19,7 +19,7 @@ If using an SQL, or NoSQL backend then a microprofile-configuration file like th
 
 #### Command-Line Arguments
 
-Command-line arguments are used to configure which TaskTide-Client to run such as the Engine for task processing, the Manager for the registration, and management of tasks, or the WebAPI for service deployment. With this, TaskTide has properties that are configured "<i>globally</i>" like the specific backend to use, that are common for both the Manager, Engine, and WebAPI. In addition to this, each client has their own configuration that specific to it. For instance the Manager client has input/output files to coordinate its import/export operations. Whereas the Engine, has arguments for the number of threads to use for the parallel processing of TaskTide entities. The WebAPI, has arguments for configuring IdP. The complete command-line arguments can be found by running "tasktide --help/-h". The <a>following link</a> directs to table text showing the same.
+Command-line arguments are used to configure which TaskTide-Client to run such as the Engine for task processing, the Manager for the registration, and management of tasks, or the WebAPI for service deployment. With this, TaskTide has properties that are configured "<i>globally</i>" like the specific backend to use, that are common for both the Manager, Engine, and WebAPI. In addition to this, each client has their own configuration that specific to it. For instance the Manager client has input/output files to coordinate its import/export operations. Whereas the Engine, has arguments for the number of threads to use for the parallel processing of TaskTide entities. The WebAPI, has arguments for configuring IdP. The complete command-line arguments can be found by running "tasktide --help/-h". The [following link](./README.md#e-web-api) directs to table text showing the same.
 <br>
 
 ---
@@ -146,7 +146,7 @@ The [Mutex](https://docs.tasktide.org/tasktide/mutex) library is used for as de-
 
 ### e). Web API
 
-Configurations for the [RESTful API](https://docs.tasktide.org/tasktide/api/README.md). Further configurations for jersey, and glassfish can be passed down.
+Configurations for the [RESTful API](https://docs.tasktide.org/tasktide/api). Further configurations for jersey, and glassfish can be passed down.
 <br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
