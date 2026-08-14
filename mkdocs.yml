@@ -6,6 +6,7 @@ site_url:  https://docs.tasktide.org
 repo_url:  https://github.com/BrenKenna/TaskTide
 repo_name: BrenKenna/TaskTide
 edit_uri:  edit/main/
+docs_dir:  .
 
 theme:
   name: material
