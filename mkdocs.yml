@@ -8,6 +8,7 @@ repo_name: BrenKenna/TaskTide
 edit_uri:  edit/main/
 docs_dir:  docs
 
+
 theme:
   name: material
   
@@ -29,6 +30,7 @@ theme:
     repo: fontawesome/brands/github
 
   language: en
+
 
 markdown_extensions:
   - admonition
@@ -54,11 +56,13 @@ markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.tilde
 
+
 plugins:
   - search
 
+
 nav:
-  - 1). Home:                           index.md
+  - 1). Home:                           README.md
 
   - 2). Guides:
     - a). Installation:                 Install.md

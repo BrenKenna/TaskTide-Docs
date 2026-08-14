@@ -1,6 +1,6 @@
 # TaskTide - CoreLib
 <p>
-Provides the model entities for the [TaskTide System](/assets/tasktide-arch.png), and their persistence to configured backend (ie Daemonless RocksDB/SQLite, Relational, NoSQL) through type constrained repository, and service ambassador pattern. The entity classes for TaskTide are summarized below, this Model View Controller complete served to simplify the design of the "[TaskTide Engine Library](/tasktide/engine/README.md)", "[TaskTide WebAPI](/tasktide/api/README.md)", and "[TaskTide Client Appilcation](/tasktide/tasktide/README.md)" views.
+Provides the model entities for the [TaskTide System](../../assets/tasktide-arch.png), and their persistence to configured backend (ie Daemonless RocksDB/SQLite, Relational, NoSQL) through type constrained repository, and service ambassador pattern. The entity classes for TaskTide are summarized below, this Model View Controller complete served to simplify the design of the "[TaskTide Engine Library](tasktide/engine/README.md)", "[TaskTide WebAPI](tasktide/api/README.md)", and "[TaskTide Client Appilcation](../tasktide/README.md)" views.
 </p>
 
 
@@ -20,7 +20,7 @@ A "<i>Workflow</i>" is an entity that models a collection of related workloads a
 
 ## 2). TaskTide Repository
 <p>
-The TaskTide repositories were modelled as generic abstract interfaces constrained to "<i>TaskTideModel</i>", to separate the concerns from backend integration (ie Jakarta-NoSQL, JPA-Relational, and ItemStore-RocksDB/SQLite) from queries against the entity collection (ie "<i>Workflow, Step, WorkItem</i>"). Where the abstract "TemplateRepository" for Jakarta-NoSQL, "JpaRepository" for Relational Databases, and "[ItemStoreRepository](/tasktide/itemstore/README.md)" classes all implement the logic for "<i>Create, Read, Update, Delete</i>" operations against their backend. Allowing the concrete implementations for Workflow, Step, WorkItem to apply this logic to their related target model. Allowing utilising interfaces to rely on the abstract typed interface, and a "<i>RepositoryType</i>" to strategically construct them.
+The TaskTide repositories were modelled as generic abstract interfaces constrained to "<i>TaskTideModel</i>", to separate the concerns from backend integration (ie Jakarta-NoSQL, JPA-Relational, and ItemStore-RocksDB/SQLite) from queries against the entity collection (ie "<i>Workflow, Step, WorkItem</i>"). Where the abstract "TemplateRepository" for Jakarta-NoSQL, "JpaRepository" for Relational Databases, and "[ItemStoreRepository](../itemstore/README.md)" classes all implement the logic for "<i>Create, Read, Update, Delete</i>" operations against their backend. Allowing the concrete implementations for Workflow, Step, WorkItem to apply this logic to their related target model. Allowing utilising interfaces to rely on the abstract typed interface, and a "<i>RepositoryType</i>" to strategically construct them.
 </p>
 
 

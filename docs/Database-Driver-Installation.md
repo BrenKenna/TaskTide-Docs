@@ -5,7 +5,7 @@ The following relates to NoSQL & Relational Databases only, meaning this can be 
 <br>
 
 <p>
-A collection of Jakarta-NoSQL database drivers have been included within TaskTide. These are MongoDB and CouchDB for DocumentTemplate, Cassandra for ColumnTemplate, Redis and DynamoDB for KeyValueTemplate with their use is [described here](/Database-Driver-Installation.md#2-using-pre-packaged-nosql-database-driver). In the event that other database drivers are required see the [following guide](/Database-Driver-Installation.md#3-using-another-nosql-database-driver).
+A collection of Jakarta-NoSQL database drivers have been included within TaskTide. These are MongoDB and CouchDB for DocumentTemplate, Cassandra for ColumnTemplate, Redis and DynamoDB for KeyValueTemplate with their use is [described here](/Database-Driver-Installation.md#2-using-pre-packaged-nosql-database-driver). In the event that other database drivers are required see the [following guide](Database-Driver-Installation.md#3-using-another-nosql-database-driver).
 </p>
 <br>
 
@@ -19,7 +19,7 @@ The following instructions are relative to the root folder of the  [release zips
     1. Download the required JDBC, if not known they are available from JetBrains at [this link](https://download.jetbrains.com/idea/jdbc-drivers/web/mssql-12.8.1.zip) which downloads version 12.8.1. Then place that jar file into the "Tasktide-< VERSION >/lib" folder.
     2. Optionally remove the unused <i>tasktide-< VERSION >/lib/"mysql-connector-j-8.0.33.jar</i>".
     3. Optionally, remove the unused JNoSQL JARs from "tasktide-< VERSION >/lib/".
-    4. Adjust Microsoft SQL Server [template config file](/configs/microsoft-sql-config.properties) according to your deployment.
+    4. Adjust Microsoft SQL Server [template config file](configs/microsoft-sql-config.properties) according to your deployment.
 </p>
 <br>
 
