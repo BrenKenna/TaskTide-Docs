@@ -1,37 +1,37 @@
 # TaskTide - ClientApp
-<p id="intro">
-Unified application exposing the TaskTide-Manager, TaskTide-Engine, and embedded TaskTide-WebAPI into a configuarable command-line program. How the program runs is goverened by arguments that are supplied at runtime, or the use of a "[TaskTide Configuration File](../../configs/microprofile-config.properties)". This design choice was to allow users of different familiarities to be able to run the program. Though not recommended to use both where not required, command-line arguments overwrite the config file values.
+
+Unified application exposing the TaskTide-Manager, TaskTide-Engine, and embedded TaskTide-WebAPI into a configuarable command-line program. How the program runs is goverened by arguments that are supplied at runtime, or the use of a "[TaskTide Configuration File](https://docs.tasktide.org/configs/microprofile-config.properties)". This design choice was to allow users of different familiarities to be able to run the program. Though not recommended to use both where not required, command-line arguments overwrite the config file values.
+<br>
 
 ---
 
 ## 1). Configuring TaskTide
 
 #### TaskTide Configuration File
-<p id="config-file">
-The complete configuration for TaskTide is [provided here](../../configs/microprofile-config.properties). For clarity this shows all values, but not all of the supplied are required. For instance, if using an RocksDB/SQLite backend then neither, the Relational/SQL/JPA backends, or the NoSQL configurations are not needed. Similarly if using Relational/SQL/JPA backends, no configurations are required for TaskTide-ItemStore/RocksDB/SQLite, or NoSQL etc. Simiarlly, if running the TaskTide-EngineClient is the requirement, then the TaskTide-ManagerClient or WebAPI configs are needed.
-</p>
 
-<p id="db-config">
-If using an SQL, or NoSQL backend then a microprofile-configuration file like the referenced [TaskTide Configuration File](../../configs/microprofile-config.properties), defined by [SmallRyeConfig](https://smallrye.io/smallrye-config/Main/config/getting-started) must be used. Additionally, SQL databases also require the use of a Java Persistence API XML config like that [linked here](../../configs/persistence.xml). How to configure backend database for TaskTide is [described here](tasktidetasktide/README.md#a-global-configurations).
-</p>
+The complete configuration for TaskTide is [provided here](https://docs.tasktide.org/configs/microprofile-config.properties). For clarity this shows all values, but not all of the supplied are required. For instance, if using an RocksDB/SQLite backend then neither, the Relational/SQL/JPA backends, or the NoSQL configurations are not needed. Similarly if using Relational/SQL/JPA backends, no configurations are required for TaskTide-ItemStore/RocksDB/SQLite, or NoSQL etc. Simiarlly, if running the TaskTide-EngineClient is the requirement, then the TaskTide-ManagerClient or WebAPI configs are needed.
+<br>
+
+If using an SQL, or NoSQL backend then a microprofile-configuration file like the referenced [TaskTide Configuration File](https://docs.tasktide.org/configs/microprofile-config.properties), defined by [SmallRyeConfig](https://smallrye.io/smallrye-config/Main/config/getting-started) must be used. Additionally, SQL databases also require the use of a Java Persistence API XML config like that [linked here](https://docs.tasktide.org/configs/persistence.xml). How to configure backend database for TaskTide is [described here](https://docs.tasktide.org/tasktide/tasktide/d#a-global-configurations).
+<br>
 
 ---
 
 #### Command-Line Arguments
-<p id="command-line-config">
+
 Command-line arguments are used to configure which TaskTide-Client to run such as the Engine for task processing, the Manager for the registration, and management of tasks, or the WebAPI for service deployment. With this, TaskTide has properties that are configured "<i>globally</i>" like the specific backend to use, that are common for both the Manager, Engine, and WebAPI. In addition to this, each client has their own configuration that specific to it. For instance the Manager client has input/output files to coordinate its import/export operations. Whereas the Engine, has arguments for the number of threads to use for the parallel processing of TaskTide entities. The WebAPI, has arguments for configuring IdP. The complete command-line arguments can be found by running "tasktide --help/-h". The <a>following link</a> directs to table text showing the same.
-</p>
+<br>
 
 ---
 
 ## 2). TaskTide Configurations
-<p id="config">
 The table below maps TaskTide configuration parameters from config file, to command-line arguments (where appropriate). Which has been separated into its separate componenets being "<i>1). Global</i>" which defines client, and backend database type to use. "<i>2). Manager</i>" for task scheduling/CRUD, and "<i>3). Engine</i>" for task processing. The global command-line arguments also include documentation on database backend for reference. 
-</p>
+<br>
 
 ---
 
 ### a). Global Configurations
+
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|
 | Repository Type | Defines which backend repository to use | NoSQL/SQL/RocksDB/SQLite | tasktide.core.repository.type | -rt--repository-type
@@ -42,12 +42,14 @@ The table below maps TaskTide configuration parameters from config file, to comm
 | WorkItem Name | WorkItem to target | MyWorkItem | tasktide.core.collection.work-item.name | -sn/--work-item-collection-name
 | Result Set Size | Number of records to restrict repository read operatios to | 10 | tasktide.core.results-set-size | -rss/--result-set-size
 
+<br>
+
 ---
 
 #### i). NoSQL Backend Configurations
-<p id="nosql-config">
-Note that the following is a minimal example for "<i>[couchDB](https://couchdb.apache.org)</i>", and should not be present in the "<i>[TaskTide Configuration File](../../configs/microprofile-config.properties)</i>" if either an SQL, or ItemStore backend are being used. Full NoSQL configurations can be found at the corresponding project "<i>[linked here](https://github.com/eclipse-jnosql/jnosql-databases)</i>". Lastly, the following guide describes how to incorporate NoSQL database into TaskTide (need a build & install for that GH repo).
-</p>
+
+Note that the following is a minimal example for "<i>[couchDB](https://couchdb.apache.org)</i>", and should not be present in the "<i>[TaskTide Configuration File](https://docs.tasktide.org/configs/microprofile-config.properties)</i>" if either an SQL, or ItemStore backend are being used. Full NoSQL configurations can be found at the corresponding project "<i>[linked here](https://github.com/eclipse-jnosql/jnosql-databases)</i>". Lastly, the following guide describes how to incorporate NoSQL database into TaskTide (need a build & install for that GH repo).
+<br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|
@@ -58,12 +60,14 @@ Note that the following is a minimal example for "<i>[couchDB](https://couchdb.a
 | Username | Username to use for authenticating requests | canBeSetAsAnEnvironmentalVariable | jnosql.couchdb.username | "<i><b>NA</b></i>" |
 | Password | Password to use for authenticating user | canBeSetAsAnEnvironmentalVariable | jnosql.couchdb.password | "<i><b>NA</b></i>" |
 
+<br>
+
 ---
 
 #### ii). Relational Backend Configurations
-<p id="sql-config">
-Relational database management system/SQL support is provided through [JPA-Hibernate](https://www.baeldung.com/learn-jpa-hibernate) using [Hikari Data Source](https://www.baeldung.com/hikaricp). Where a single "<i>[Entity Manager](https://jakarta.ee/specifications/persistence/2.2/apidocs/javax/persistence/entitymanager)</i>" per instance provides "<i>Workflows, Steps, and WorkItems</i>" persistence. In order to use this interface, the implementations must be configured being "<i>Hikari CP</i>", and "<i>Hibernate</i>". As with the [NoSQL Configurations](tasktidetasktide/README.md#i-nosql-backend-configurations), if a relational backend is being used. Then neither the ItemStore, nor the JNoSQL configurations need to be defined. The configurations provided below are a minimal parameters for use with [MariaDB](https://mariadb.org/). 
-</p>
+
+Relational database management system/SQL support is provided through [JPA-Hibernate](https://www.baeldung.com/learn-jpa-hibernate) using [Hikari Data Source](https://www.baeldung.com/hikaricp). Where a single "<i>[Entity Manager](https://jakarta.ee/specifications/persistence/2.2/apidocs/javax/persistence/entitymanager)</i>" per instance provides "<i>Workflows, Steps, and WorkItems</i>" persistence. In order to use this interface, the implementations must be configured being "<i>Hikari CP</i>", and "<i>Hibernate</i>". As with the [NoSQL Configurations](tasktide/tasktide/README.md#i-nosql-backend-configurations), if a relational backend is being used. Then neither the ItemStore, nor the JNoSQL configurations need to be defined. The configurations provided below are a minimal parameters for use with [MariaDB](https://mariadb.org/). 
+<br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|
@@ -77,9 +81,9 @@ Relational database management system/SQL support is provided through [JPA-Hiber
 ---
 
 ### b). Engine Client Configurations
-<p id="engine-client">
+
 The engine client brings in parallel task processing over the configured backend, with real-time updates being applied to throughout the life-cycle of a task. The below parameters can be used to adjust how TaskTide processes these tasks, such as which task collection, level of parallelism, its monitoring componenets etc. The only mandatory property is the Step property, which when a comma separated list is provided processes tasks from those workflow steps.
-</p>
+<br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|
@@ -105,9 +109,9 @@ The engine client brings in parallel task processing over the configured backend
 ---
 
 ### c). Manager Client Configurations
-<p id="manager-client">
-The manager client brings in task scheduling using the configured backend. Operations performed the Manager open these CURD actions via the configurable properties described below. While the TaskTide-ManagerClient can be used within ETL scripts to enqueue the next step for an active item, it's recommended to import through the file import ([example provided here](../../configs/nested-nslookup-tasks.txt)). 
-</p>
+
+The manager client brings in task scheduling using the configured backend. Operations performed the Manager open these CURD actions via the configurable properties described below. While the TaskTide-ManagerClient can be used within ETL scripts to enqueue the next step for an active item, it's recommended to import through the file import ([example provided here](https://docs.tasktide.org/configs/nested-nslookup-tasks.txt)). 
+<br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|
@@ -124,9 +128,9 @@ The manager client brings in task scheduling using the configured backend. Opera
 ---
 
 ### d). ItemStore Mutex Configuration
-<p id="item-store">
-The [Mutex](../itemstore/README.md) library is used for as de-centralized operation queue for the [ItemStore Repository](../itemstore/README.md).
-</p>
+
+The [Mutex](https://docs.tasktide.org/tasktide/mutex) library is used for as de-centralized operation queue for the [ItemStore Repository](https://docs.tasktide.org/itemstore).
+<br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|
@@ -141,9 +145,9 @@ The [Mutex](../itemstore/README.md) library is used for as de-centralized operat
 ---
 
 ### e). Web API
-<p id="web-api">
-Configurations for the [RESTful API](../api/README.md). Further configurations for jersey, and glassfish can be passed down.
-</p>
+
+Configurations for the [RESTful API](https://docs.tasktide.org/tasktide/api/README.md). Further configurations for jersey, and glassfish can be passed down.
+<br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|

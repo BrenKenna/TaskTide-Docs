@@ -41,15 +41,13 @@ TaskTide ships as a <strong>lightweight</strong>, <strong>daemon-less</strong>, 
 
 ## 🧑‍💻 Getting Started
 
-<p id="getting-started-a">
 An installation guide tailored to variety of use-cases is [provided here](Install.md). Backend database configurations should follow provider recommendations, since [Jakarta NoSQL](https://github.com/eclipse-jnosql/jnosql-databases) brings in NoSQL support, and [JPA-Hibernate](https://www.baeldung.com/learn-jpa-hibernate) using [Hikari Data Source](https://www.baeldung.com/hikaricp) brings in SQL, whose use for TaskTide are [documented here](tasktidetasktide/README.md#a-global-configurations).
-</p>
+<br>
 
 ### 💻 Running TaskTide
 
-<p id="getting-started-b">
 How TaskTide should run can be configured based on parameters in a [TaskTide Config File](configs/microprofile-config.properties), or command-line arguments. This was to simplify the use case of the Engine and Manager clients, as they are target orientated. However, when using command-line arguments the target backend parameters must be declared in that file as they are set and provided by the Jakarta-NoSQL, and JPA dependancies (if being used). Additionally since only one backend database type should be used, application runtime can be optimized by removing unused dependancies (ex JNoSQL if JPA etc) [described here](tasktidetasktide/README.md#a-global-configurations).
-</p>
+<br>
 
 ```bash
 # Run using parameters from TaskTide config file
@@ -83,5 +81,5 @@ How TaskTide should run can be configured based on parameters in a [TaskTide Con
 <br>
 
 <p id="arch-b" align="center">
-  ![TaskTide Architecture](assets/tasktide-db-hook.png)
+  <img src="assets/tasktide-db-hook.png)" alt="TaskTide Logo"/>
 </p>

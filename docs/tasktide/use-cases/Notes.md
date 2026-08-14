@@ -1,7 +1,6 @@
 # Use Case Notes
-<p>
 Contains notes on any issues/limitations from running TaskTide during each use-case. Depending on the type, these lead to redeployment to verify change(s), in addition to unit-tests. Entries would ideally be a little higher level than those in the [change log](https://github.com/BrenKenna/TaskTide/blob/main/CHANGELOG.adoc), because want to catch and collect these for version-1. Allows the MVP from first use-case, to be compared to version-1 artifact, and plan out v2 deliverables.
-</p>
+<br>
 
 
 ## 1). Workflow Orchestration - Sept/2025
