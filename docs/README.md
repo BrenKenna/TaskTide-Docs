@@ -81,5 +81,5 @@ How TaskTide should run can be configured based on parameters in a [TaskTide Con
 <br>
 
 <p id="arch-b" align="center">
-  <img src="assets/tasktide-db-hook.png)" alt="TaskTide Logo"/>
+  <img src="assets/tasktide-db-hook.png" alt="TaskTide Arch"/>
 </p>

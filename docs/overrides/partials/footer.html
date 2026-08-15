@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block footer %}
+  {{ super() }}
+
+  <div class="tasktide-footer-brand">
+    <a href="https://tasktide.org" title="TaskTide Website">
+      <img src="{{ 'assets/logo1.jpg' | url }}" alt="TaskTide">
+    </a>
+  </div>
+{% endblock %}

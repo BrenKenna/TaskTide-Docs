@@ -9,6 +9,33 @@ edit_uri:  edit/main/
 docs_dir:  docs
 
 
+copyright: >
+  TaskTide — Backend-agnostic workflow orchestration engine
+
+
+extra_css:
+  - stylesheets/extra.css
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/BrenKenna/TaskTide
+      name: TaskTide on GitHub
+
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/bkenna/tasktide
+      name: TaskTide on Docker
+
+    - icon: fontawesome/brands/java
+      link: https://api-docs.tasktide.org
+      name: TaskTide Java API Documentation
+    
+    - icon: fontawesome/solid/heart
+      link: https://github.com/sponsors/BrenKenna
+      name: Sponsor TaskTide
+
+
 theme:
   name: material
   

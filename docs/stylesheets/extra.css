@@ -1,0 +1,15 @@
+.tasktide-footer-brand {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.tasktide-footer-brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.tasktide-footer-brand a {
+  display: inline-block;
+}
