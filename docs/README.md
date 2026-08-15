@@ -4,8 +4,11 @@
 
 # TaskTide
 
-![build](https://img.shields.io/badge/build-passing-brightgreen)  
-![license](https://img.shields.io/badge/license-Apache%202.0-blue)  
+[![Website](https://img.shields.io/badge/Website-tasktide.org-blue)](https://tasktide.org)
+[![API Reference](https://img.shields.io/badge/API%20Reference-JavaDoc-blue)](https://api-docs.tasktide.org)
+[![build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/BrenKenna/TaskTide/actions/workflows/gradle.yml)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue)](https://github.com/BrenKenna/TaskTide/blob/main/LICENSE)
+
 
 <p id="intro-a">
 <strong>TaskTide</strong> is a modular <strong>Workflow Orchestration Engine</strong> designed for <strong>Cloud</strong>, <strong>HPC</strong>, <strong>Grid</strong>, and <strong>Edge Computing</strong> workloads. It enables the execution of <strong>ETL-style workflows</strong> and arbitrary <strong>Data Application</strong> as task collections.
