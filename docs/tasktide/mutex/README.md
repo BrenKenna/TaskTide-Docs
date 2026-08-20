@@ -8,5 +8,5 @@ The library was developed for [ItemStore](../itemstore/README.md) databases that
 
 
 <p align="center">
-  <img src="assets/mutex-workflow.png" alt="" width="300"/>
+  <img src="../../assets/mutex-workflow.png" alt="" width="300"/>
 </p>
