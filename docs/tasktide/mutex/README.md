@@ -6,7 +6,8 @@ Library for de-centralized file orientated semaphore across disttributed process
 The library was developed for [ItemStore](../itemstore/README.md) databases that are daemonless and file-based. So that a de-centralized read-write queue can be used for ItemStore-Repository. Allowing multiple jobs running across distinct hosts of HPC to coordinate their access patterns against target file on attached. Without requiring the submission of an additional side-car process for the job fleet. 
 <br>
 
+<br>
 
 <p align="center">
-  <img src="../../assets/mutex-workflow.png" alt="" width="300"/>
+  <img src="../../assets/mutex-workflow.png" alt=""/>
 </p>
