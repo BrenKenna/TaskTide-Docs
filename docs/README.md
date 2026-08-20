@@ -4,10 +4,12 @@
 
 # TaskTide
 
-[![Website](https://img.shields.io/badge/Website-tasktide.org-blue)](https://tasktide.org)
-[![API Reference](https://img.shields.io/badge/API%20Reference-JavaDoc-blue)](https://api-docs.tasktide.org)
+[![Website](https://img.shields.io/badge/Website-tasktide.org-551A8B)](https://tasktide.org)
+[![Maven Central](https://img.shields.io/maven-central/v/org.tasktide/tasktide)](https://central.sonatype.com/artifact/org.tasktide/tasktide)
+[![API Reference](https://img.shields.io/badge/API%20Reference-JavaDoc-4b8fc9)](https://api-docs.tasktide.org)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21959893.svg)](https://doi.org/10.5281/zenodo.21959893)
 [![build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/BrenKenna/TaskTide/actions/workflows/gradle.yml)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue)](https://github.com/BrenKenna/TaskTide/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-3A719B)](https://github.com/BrenKenna/TaskTide/blob/main/LICENSE)
 
 
 <p id="intro-a">
