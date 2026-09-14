@@ -3,7 +3,7 @@ site_description: Java Workflow Orchestration Engine for Data Application deploy
 site_author: Brendan Kenna
 
 site_url:  https://docs.tasktide.org
-repo_url:  https://github.com/BrenKenna/TaskTide
+repo_url:  https://github.tasktide.org
 repo_name: BrenKenna/TaskTide
 edit_uri:  edit/main/
 docs_dir:  docs
@@ -118,4 +118,4 @@ nav:
       - a). JavaDoc:                    https://api.docs.tasktide.org
 
   - 6). Changelog:
-      - a). v1.0.0:                     https://github.com/BrenKenna/TaskTide/blob/main/CHANGELOG.adoc
+      - a). v1.0.0:                     https://github.tasktide.org/blob/main/CHANGELOG.adoc
