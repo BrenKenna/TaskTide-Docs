@@ -45,5 +45,3 @@ The use here is demonstrate how TaskTide can be used inconjuction with Hadoop ec
 The use-case here is broader demsontrate TaskTide's utility in AI training and deployment. Where a Super Mario play time optimizer is trained with various parameters, and then each is then evaluated by being used to play the game. The use-case is run through containerized deployment and using couchDB as the backend database for TaskTide.
 
  > **[Go to the *Mario AI Agent*  Use-Case ➞](https://github.com/BrenKenna/TaskTide-UseCases/tree/main/Mario-AI-Agent)**
-
-<br>

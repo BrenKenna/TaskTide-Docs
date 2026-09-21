@@ -8,7 +8,7 @@ Please see the [following template](general/bug_report.md) for reporting issues,
 - Reproducible problems with TaskTide
 - Documentation errors
 - Build or installation problems
-- Security issues that should not be reported publicly (see "SECURITY.md")
+- Security issues that should not be reported publicly (see [Reporting Vulnerability](/SECURITY.md))
 
 Before opening an issue, please check existing issues and documentation to avoid duplicates.
 

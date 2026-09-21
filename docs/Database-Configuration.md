@@ -8,4 +8,4 @@ Separate guides for each TaskTide-Repository type have been provided and are lin
 
 - **[Hibernate SQL Database Instructions ➞](general/database-configuration/SQL-Databases.md)**
 
-- **[ItemStore Instructions](general/database-configuration/Embedded-Databases.md)**
+- **[ItemStore Instructions ➞](general/database-configuration/Embedded-Databases.md)**

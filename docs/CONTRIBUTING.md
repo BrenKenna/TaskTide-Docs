@@ -8,6 +8,12 @@ Please read the project documentation and check existing issues and pull request
 
 For larger changes, opening an issue to discuss the proposed approach first is encouraged. This helps avoid duplicated work and ensures that a contribution is aligned with the direction of TaskTide.
 
+<br>
+
+---
+
+<br>
+
 ## Development
 
 Please ensure that your changes:
@@ -20,6 +26,11 @@ Please ensure that your changes:
 
 Run the project's test suite before submitting a pull request.
 
+<br>
+
+---
+
+<br>
 
 ## Pull Requests
 
@@ -34,6 +45,11 @@ Keep pull requests focused on a single change where practical.
 
 All pull requests are subject to review. Changes may be requested before a pull request is merged.
 
+<br>
+
+---
+
+<br>
 
 ## Scope and Acceptance
 
@@ -45,11 +61,21 @@ The maintainers may decline, defer, modify, or close contributions that do not f
 
 TaskTide is developed according to the needs and direction of the project. Contributors are welcome to propose changes, but acceptance remains at the discretion of the maintainers.
 
+<br>
+
+---
+
+<br>
 
 ## Code of Conduct
 
 Please keep discussions and contributions respectful and constructive.
 
+<br>
+
+---
+
+<br>
 
 ## Security
 

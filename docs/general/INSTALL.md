@@ -16,7 +16,7 @@ As a Java application TaskTide requires [java+17](https://docs.oracle.com/en/jav
 <br>
 
 ## 1). Pre-compiled Application
-Each [TaskTide release](https://github.com/BrenKenna/TaskTide/releases/edit/v0.9.0) contains a zip o all TaskTide dependancies, wrapper scripts for running on linux/windows and configuration files which can be adjusted for the [target deployment strategy](/Database-Configuration).
+Each [TaskTide release](https://github.com/BrenKenna/TaskTide/releases/v0.9.0) contains a zip o all TaskTide dependancies, wrapper scripts for running on linux/windows and configuration files which can be adjusted for the [target deployment strategy](/Database-Configuration).
 
 ``` bash
 # 1). Fetch zip

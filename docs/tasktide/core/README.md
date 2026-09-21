@@ -1,8 +1,12 @@
 # TaskTide - CoreLib
 
-Provides the model entities for the [TaskTide System](../../assets/tasktide-arch.png), and their persistence to configured backend (ie embedded RocksDB/SQLite, Relational, NoSQL) through type constrained repository, and service ambassador pattern. The entity classes for TaskTide are summarized below, this Model View Controller complete served to simplify the design of the "[TaskTide Engine Library](../engine/README.md)", "[TaskTide WebAPI](../api/README.md)", and "[TaskTide Client Appilcation](../tasktide/README.md)" views.
+Provides the model entities for the [TaskTide System](../../assets/tasktide-arch.png), and their persistence to configured backend (ie embedded RocksDB/SQLite, Relational, NoSQL) through type constrained repository, and service ambassador pattern. The entity classes for TaskTide are summarized below, this Model View Controller complete served to simplify the design of the "[TaskTide Engine Library](../engine/)", "[TaskTide WebAPI](../api/)", and "[TaskTide Client Appilcation](../tasktide/)" views.
+
 <br>
 
+---
+
+<br>
 
 ## 1). TaskTide Entities
 
@@ -15,16 +19,25 @@ A "<i>WorkItem</i>" is a hirearchal entity whose life-cycle is managed by TaskTi
 <br><br>
 
 A "<i>Workflow</i>" is an entity that models a collection of related workloads as a map of "<i>Steps</i>". A "<i>Step</i>" is an entity that relates a collection of "<i>WorkItems</i>". Storing an alias for a Step in a WorkItem decouples meta-data from core data. TaskTides manager client through which WorkItems can imported/exported from user input.
+
+<br>
+
+---
+
 <br>
 
 
 ## 2). TaskTide Repository
 
-The TaskTide repositories were modelled as generic abstract interfaces constrained to "<i>TaskTideModel</i>", to separate the concerns from backend integration (ie Jakarta-NoSQL, JPA-Relational, and ItemStore-RocksDB/SQLite) from queries against the entity collection (ie "<i>Workflow, Step, WorkItem</i>"). Where the abstract "TemplateRepository" for Jakarta-NoSQL, "JpaRepository" for Relational Databases, and "[ItemStoreRepository](../itemstore/README.md)" classes all implement the logic for "<i>Create, Read, Update, Delete</i>" operations against their backend. Allowing the concrete implementations for Workflow, Step, WorkItem to apply this logic to their related target model. Allowing utilising interfaces to rely on the abstract typed interface, and a "<i>RepositoryType</i>" to strategically construct them.
+The TaskTide repositories were modelled as generic abstract interfaces constrained to "<i>TaskTideModel</i>", to separate the concerns from backend integration (ie Jakarta-NoSQL, JPA-Relational, and ItemStore-RocksDB/SQLite) from queries against the entity collection (ie "<i>Workflow, Step, WorkItem</i>"). Where the abstract "TemplateRepository" for Jakarta-NoSQL, "JpaRepository" for Relational Databases, and "[ItemStoreRepository](../itemstore/)" classes all implement the logic for "<i>Create, Read, Update, Delete</i>" operations against their backend. Allowing the concrete implementations for Workflow, Step, WorkItem to apply this logic to their related target model. Allowing utilising interfaces to rely on the abstract typed interface, and a "<i>RepositoryType</i>" to strategically construct them.
+
+<br>
+
+---
+
 <br>
 
 
 ## 3). TaskTide Service and Manager
 
 A given "<i>TaskTideService</i>" instance (Workflow, Step, WorkItem) is composed with its corresponding "<i>TaskTideRepository</i>" which decouples the repository complexity (backend database) from the implementing class' business logic into a configurable singleton "<i>TaskTideServiceManager</i>" (ie configured once and reused). Which for the TaskTide Engine Client is task processing, and TaskTide Manager Client is task orchestration. The Manager package builds on this logic providing end-user facing interfaces for task import/export through its own "<i>ManagerTask</i>" model, which performs TaskTideModel conversion.
-<br>

@@ -8,7 +8,11 @@ Precise ordering of read-writes is not as important having them just queued. Whi
 
 Bucketing of this algorithm has been templated to be explored further for future versions. In additon to an optional local FileChannel FileLock to serialised ballots across JVMs on the same host, both to reduce the number of simultaneous ballots.
 
-The library was developed for the [ItemStore](/tasktide/itemstore/README.md) databases that do not require a process, or network connection. So that a de-centralized read-write queue can be used for ItemStore-Repository. That allows for multiple jobs running across the distinct hosts of a HPC, to coordinate their access patterns against the target file. <em>Without introducing the maintenence, fault-tolerance, stability, and availability requirements in deploying an additional side-car process to orchestrate the queue</em>.
+The library was developed for the [ItemStore](/tasktide/itemstore) databases that do not require a process, or network connection. So that a de-centralized read-write queue can be used for ItemStore-Repository. That allows for multiple jobs running across the distinct hosts of a HPC, to coordinate their access patterns against the target file. <em>Without introducing the maintenence, fault-tolerance, stability, and availability requirements in deploying an additional side-car process to orchestrate the queue</em>.
+
+<br>
+
+---
 
 <br>
 

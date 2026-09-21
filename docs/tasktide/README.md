@@ -1,13 +1,13 @@
 # TaskTide System
 <p align="center">
-  <img src="/docs/assets/tasktide-arch.png" alt="TaskTide-Arch"/>
+  <img src="/assets/tasktide-arch.png" alt="TaskTide-Arch"/>
 </p>
-<br>
 
+<br>
 
 ## 1). TaskTide-ItemStore Library
 
-Documentation for this module can be [found here](/tasktide/itemstore/README.md) and dependant Mutex [found here](/tasktide/mutex/README.md).
+Documentation for this module can be [found here](/tasktide/itemstore/) and dependant Mutex [found here](/tasktide/mutex/).
 
 <br>
 
@@ -16,7 +16,7 @@ Documentation for this module can be [found here](/tasktide/itemstore/README.md)
 
 ## 2). TaskTide-Core Library
 
-Documentation for this module can be [found here](/tasktide/core/README.md).
+Documentation for this module can be [found here](/tasktide/core/).
 
 <br>
 
@@ -25,7 +25,7 @@ Documentation for this module can be [found here](/tasktide/core/README.md).
 
 ## 3). TaskTide-Engine Library
 
-Documentation for this module can be [found here](/tasktide/engine/README.md).
+Documentation for this module can be [found here](/tasktide/engine/).
 
 <br>
 
@@ -34,7 +34,7 @@ Documentation for this module can be [found here](/tasktide/engine/README.md).
 
 ## 4). TaskTide Web API
 
-Documentation for this module can be [found here](/tasktide/api/README.md) embeds jersey glassfish web server.
+Documentation for this module can be [found here](/tasktide/api/) embeds jersey glassfish web server.
 
 <br>
 
@@ -43,4 +43,4 @@ Documentation for this module can be [found here](/tasktide/api/README.md) embed
 
 ## 5). TaskTide Client Application
 
-Documentation for this module can be [found here](/tasktide/tasktide/README.md) and dependant Parser [found here](/tasktide/parser/README.md).
+Documentation for this module can be [found here](/tasktide/tasktide/) and dependant Parser [found here](/tasktide/parser/).
