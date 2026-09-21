@@ -30,7 +30,7 @@ Command-line arguments are used to configure which TaskTide-Client to run such a
 
 ## 2). TaskTide Configurations
 
-The below tables map TaskTide configuration parameters from config file, to command-line arguments (where appropriate) and has been separated into its separate componenets being "*[1). Global Configurations](./README.md#a-global-configurations)*" which defines client, and backend database type to use. "*[2). Manager Configurations](./README.md#b-manager-client-configurations)*" for task scheduling/CRUD, and ""*[3). Engine Configurations](./README.md#b-engine-client-configurations)*"" for task processing. The global command-line arguments also include documentation on database backend for reference.
+The below tables map TaskTide configuration parameters from config file, to command-line arguments (where appropriate) and has been separated into its separate componenets being "*[1). Global Configurations](./README.md#a-global-configurations)*" which defines client, and backend database type to use. "*[2). Manager Configurations](./README.md#b-manager-client-configurations)*" for task scheduling/CRUD, and ""*[3). Engine Configurations](./README.md#d-engine-client-configurations)*"" for task processing. The global command-line arguments also include documentation on database backend for reference.
 
 <br>
 
