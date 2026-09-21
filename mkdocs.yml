@@ -36,11 +36,16 @@ extra:
     - icon: fontawesome/solid/heart
       link: https://github.com/sponsors/BrenKenna
       name: Sponsor TaskTide
+    
+    - icon: < WANNA REFERENCE EMOJI >
+      link: https://use-cases.tasktide.org
+      name: TaskTide Use Cases
 
 
 theme:
   name: material
-  
+  custom_dir: overrides
+
   favicon: assets/logo1.jpg
   logo: assets/logo1.jpg
   
@@ -56,7 +61,8 @@ theme:
     - content.action.edit
 
   icon:
-    repo: fontawesome/brands/github
+    repo:         fontawesome/brands/github
+    water-wave:   twemoji/water-wave
 
   language: en
 
@@ -70,7 +76,6 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
@@ -84,6 +89,13 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist
   - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+
 
 
 plugins:
@@ -91,31 +103,31 @@ plugins:
 
 
 nav:
-  - 1). Home:                           README.md
+  - 1). Home:                                         README.md
 
-  - 2). Guides:
-    - a). Installation:                 Install.md
-    - b). Database Configuration:       Database-Driver-Installation.md
-    - c). Frequently Asked Questions:   FAQ.md
+  - 2). General:
+    - a). Installation:                               general/INSTALL.md
+    - b). Database Configuration:                     Database-Configuration.md
+    - c). Testing:                                    general/TESTING.md
+    - d). Release Template:                           RELEASE.md
+    - e). Reporting Vulnerability:                    SECURITY.md
+    - f). Feature Request/Issues Template:            ISSUES.md
+    - g). Contributing:                               CONTRIBUTING.md
 
   - 3). Modules:
-      - a). TaskTide:                   tasktide/README.md
-      - b). Mutex:                      tasktide/mutex/README.md
-      - c). Item Store:                 tasktide/itemstore/README.md
-      - d). Core:                       tasktide/core/README.md
-      - e). Engine:                     tasktide/engine/README.md
-      - f). Web API:                    tasktide/api/README.md
-      - g). Parser:                     tasktide/parser/README.md
-      - h). Command-Line Client:        tasktide/tasktide/README.md
+      - a). TaskTide:                                 tasktide/README.md
+      - b). Mutex:                                    tasktide/mutex/README.md
+      - c). Item Store:                               tasktide/itemstore/README.md
+      - d). Core:                                     tasktide/core/README.md
+      - e). Engine:                                   tasktide/engine/README.md
+      - f). Web API:                                  tasktide/api/README.md
+      - g). Parser:                                   tasktide/parser/README.md
+      - h). Command-Line Client:                      tasktide/tasktide/README.md
 
-  - 4). Use Cases:
-      - a). Introduction:               tasktide/use-cases/README.md
-      - b). Workflows:                  tasktide/use-cases/workflow-use-case/README.md
-      - c). Task Binding:               tasktide/use-cases/task-binding-use-case/README.md
-      - d). AI Deployment:              tasktide/use-cases/deployment-use-case/README.md
+  - 4). Use Cases:                                    tasktide/use-cases.md
 
   - 5). API Reference:
-      - a). JavaDoc:                    https://api.docs.tasktide.org
+      - a). JavaDoc:                                  https://api.docs.tasktide.org
 
   - 6). Changelog:
-      - a). v1.0.0:                     https://github.tasktide.org/blob/main/CHANGELOG.adoc
+      - a). v1.0.0:                                   https://github.tasktide.org/blob/main/CHANGELOG.adoc

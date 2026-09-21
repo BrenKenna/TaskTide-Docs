@@ -1,6 +1,7 @@
 # TaskTide - ClientApp
 
 Unified application exposing the TaskTide-Manager, TaskTide-Engine, and embedded TaskTide-WebAPI into a configuarable command-line program. How the program runs is goverened by arguments that are supplied at runtime, or the use of a "[TaskTide Configuration File](https://docs.tasktide.org/configs/microprofile-config.properties)". This design choice was to allow users of different familiarities to be able to run the program. Though not recommended to use both where not required, command-line arguments overwrite the config file values.
+
 <br>
 
 ---
@@ -10,27 +11,36 @@ Unified application exposing the TaskTide-Manager, TaskTide-Engine, and embedded
 #### TaskTide Configuration File
 
 The complete configuration for TaskTide is [provided here](https://docs.tasktide.org/configs/microprofile-config.properties). For clarity this shows all values, but not all of the supplied are required. For instance, if using an RocksDB/SQLite backend then neither, the Relational/SQL/JPA backends, or the NoSQL configurations are not needed. Similarly if using Relational/SQL/JPA backends, no configurations are required for TaskTide-ItemStore/RocksDB/SQLite, or NoSQL etc. Simiarlly, if running the TaskTide-EngineClient is the requirement, then the TaskTide-ManagerClient or WebAPI configs are needed.
+
 <br>
 
 If using an SQL, or NoSQL backend then a microprofile-configuration file like the referenced [TaskTide Configuration File](https://docs.tasktide.org/configs/microprofile-config.properties), defined by [SmallRyeConfig](https://smallrye.io/smallrye-config/Main/config/getting-started) must be used. Additionally, SQL databases also require the use of a Java Persistence API XML config like that [linked here](https://docs.tasktide.org/configs/persistence.xml). How to configure backend database for TaskTide is [described here](https://docs.tasktide.org/tasktide/tasktide/d#a-global-configurations).
+
 <br>
 
 ---
 
 #### Command-Line Arguments
 
-Command-line arguments are used to configure which TaskTide-Client to run such as the Engine for task processing, the Manager for the registration, and management of tasks, or the WebAPI for service deployment. With this, TaskTide has properties that are configured "<i>globally</i>" like the specific backend to use, that are common for both the Manager, Engine, and WebAPI. In addition to this, each client has their own configuration that specific to it. For instance the Manager client has input/output files to coordinate its import/export operations. Whereas the Engine, has arguments for the number of threads to use for the parallel processing of TaskTide entities. The WebAPI, has arguments for configuring IdP. The complete command-line arguments can be found by running "tasktide --help/-h". The [following link](./README.md#e-web-api) directs to table text showing the same.
+Command-line arguments are used to configure which TaskTide-Client to run such as the Engine for task processing, the Manager for the registration, and management of tasks, or the WebAPI for service deployment. With this, TaskTide has properties that are configured "<i>globally</i>" like the specific backend to use, that are common for both the Manager, Engine, and WebAPI. In addition to this, each client has their own configuration that specific to it. For instance the Manager client has input/output files to coordinate its import/export operations. Whereas the Engine, has arguments for the number of threads to use for the parallel processing of TaskTide entities. The complete command-line arguments can be found by running "tasktide --help/-h". The [following link](./README.md#e-web-api) directs to table text showing the same.
+
 <br>
 
 ---
 
 ## 2). TaskTide Configurations
-The table below maps TaskTide configuration parameters from config file, to command-line arguments (where appropriate). Which has been separated into its separate componenets being "<i>1). Global</i>" which defines client, and backend database type to use. "<i>2). Manager</i>" for task scheduling/CRUD, and "<i>3). Engine</i>" for task processing. The global command-line arguments also include documentation on database backend for reference. 
+
+The below tables map TaskTide configuration parameters from config file, to command-line arguments (where appropriate) and has been separated into its separate componenets being "*[1). Global Configurations](./README.md#a-global-configurations)*" which defines client, and backend database type to use. "*[2). Manager Configurations](./README.md#b-manager-client-configurations)*" for task scheduling/CRUD, and ""*[3). Engine Configurations](./README.md#b-engine-client-configurations)*"" for task processing. The global command-line arguments also include documentation on database backend for reference.
+
 <br>
 
 ---
 
 ### a). Global Configurations
+
+Database configuration is central and global configuration for TaskTide. Separate instructions have been provided depending on the provisioned backend and are aggregated at the [following link here]. Details on configuring TaskTide with a NoSQL with Jakarta-NoSQL can be [found here](/general/database-configuration/NoSQL-Databases.md), SQL with Hibernate and HikariCP can be [found here](/general/database-configuration/SQL-Databases.md), and Embedded databases RocksDB and SQLite can be [found here](/general/database-configuration/Embedded-Databases.md).
+
+<br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|
@@ -48,7 +58,7 @@ The table below maps TaskTide configuration parameters from config file, to comm
 
 #### i). NoSQL Backend Configurations
 
-Note that the following is a minimal example for "<i>[couchDB](https://couchdb.apache.org)</i>", and should not be present in the "<i>[TaskTide Configuration File](https://docs.tasktide.org/configs/microprofile-config.properties)</i>" if either an SQL, or ItemStore backend are being used. Full NoSQL configurations can be found at the corresponding project "<i>[linked here](https://github.com/eclipse-jnosql/jnosql-databases)</i>". Lastly, the following guide describes how to incorporate NoSQL database into TaskTide (need a build & install for that GH repo).
+Note that the following is a minimal example for "<i>[couchDB](https://couchdb.apache.org)</i>", and should not be present in the "<i>[TaskTide Configuration File](https://docs.tasktide.org/configs/microprofile-config.properties)</i>" if either an SQL, or ItemStore backend are being used. Full NoSQL configurations can be found at the corresponding project "<i>[linked here](https://github.com/eclipse-jnosql/jnosql-databases)</i>". Lastly, the [following guide](/general/database-configuration/NoSQL-Databases.md) describes how to incorporate NoSQL database into TaskTide (need a build & install for that GH repo).
 <br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
@@ -66,7 +76,7 @@ Note that the following is a minimal example for "<i>[couchDB](https://couchdb.a
 
 #### ii). Relational Backend Configurations
 
-Relational database management system/SQL support is provided through [JPA-Hibernate](https://www.baeldung.com/learn-jpa-hibernate) using [Hikari Data Source](https://www.baeldung.com/hikaricp). Where a single "<i>[Entity Manager](https://jakarta.ee/specifications/persistence/2.2/apidocs/javax/persistence/entitymanager)</i>" per instance provides "<i>Workflows, Steps, and WorkItems</i>" persistence. In order to use this interface, the implementations must be configured being "<i>Hikari CP</i>", and "<i>Hibernate</i>". As with the [NoSQL Configurations](../tasktide/README.md#i-nosql-backend-configurations), if a relational backend is being used. Then neither the ItemStore, nor the JNoSQL configurations need to be defined. The configurations provided below are a minimal parameters for use with [MariaDB](https://mariadb.org/). 
+Relational database management system/SQL support is provided through [JPA-Hibernate](https://www.baeldung.com/learn-jpa-hibernate) using [Hikari Data Source](https://www.baeldung.com/hikaricp). Where a single "<i>[Entity Manager](https://jakarta.ee/specifications/persistence/2.2/apidocs/javax/persistence/entitymanager)</i>" per instance provides "<i>Workflows, Steps, and WorkItems</i>" persistence. In order to use this interface, the implementations must be configured being "<i>Hikari CP</i>", and "<i>Hibernate</i>". As with the [NoSQL Configurations](../tasktide/README.md#i-nosql-backend-configurations), if a relational backend is being used, then neither the ItemStore, nor the JNoSQL configurations need to be defined. The configurations provided below are a minimal parameters for use with [MariaDB](https://mariadb.org/), other database technologies can use [the following guide](/docs/general/database-configuration/SQL-Databases.md) as a reference.
 <br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
@@ -78,39 +88,16 @@ Relational database management system/SQL support is provided through [JPA-Hiber
 | Dialect | SQL-JDBC bridge | org.hibernate.dialect.MariaDBDialect | hibernate.dialect | "<i><b>NA</b></i>" |
 | DDL Auto | Schema generation tool see hibernate documentation <a href="https://docs.jboss.org/hibernate/orm/5.0/manual/en-US/html/ch03.html#configuration-misc-properties">linked here</a> | update | hibernate.hbm2ddl.auto | "<i><b>NA</b></i>" |
 
----
-
-### b). Engine Client Configurations
-
-The engine client brings in parallel task processing over the configured backend, with real-time updates being applied to throughout the life-cycle of a task. The below parameters can be used to adjust how TaskTide processes these tasks, such as which task collection, level of parallelism, its monitoring componenets etc. The only mandatory property is the Step property, which when a comma separated list is provided processes tasks from those workflow steps.
 <br>
 
-| Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
-|--|--|--|--|--|
-| Worker Pool Size | Defines the number of engine workers | 2 | tasktide.engine.worker.threads.worker-pool-size | -w/--worker-pool-size |
-| ItemTask Threads | Defines the number of threads to recruit for ItemTask processing | 2 | tasktide.engine.worker.threads.itemTask | -i/--item-task-threads |
-| Worker Window Size | Defines the number of tasks polled from policy results | 10 | tasktide.engine.worker.window-size | -wws/--work-window-size |
-| Lock Wait Time | Configures wait time in seconds for locking an item | 5 | tasktide.engine.worker.lock-wait-time | -l/--lock-wait-time |
-| Process Executor Stream Directory | Log stream directory for Process Executor | ~/ | tasktide.engine.process-executor.stream-directory | -sd/--stream-directory |
-
-| Execution Policy | Engine execution policy | BATCH/SERVICE | tasktide.engine.execution-policy | -ep/--execution-policy |
-| Strategy Type | Specifies workflow acquisition strategy to use | SEQUENTIAL/ROUND ROBIN | tasktide.engine.policy.acquisition.workflow.strategy | -st/--strategy-type |
-| Acquisition Mode | Specifies acqusition mode for workflow strategy | EXHAUST/SCANNER | tasktide.engine.policy.acquisition.workflow.mode | -am/--acquisition-mode |
-
-| Pilot Label Key | CustomAnnotation key on WorkItem for early task binding to pilot job | MyAnnotationKey | tasktide.engine.pilot.label.key | -plk/--pilot-label-key |
-| Pilot Label Value | CustomAnnotation value on WorkItem for early task binding to pilot job | MyAnnotationValue | tasktide.engine.pilot.label.value | -plk/--pilot-label-key |
-| Pilot Label Annotation | JSON formatted CustomAnnotation | '{ "Key": "Anno Key", "Value": "GPU Target" }' | tasktide.engine.pilot.label.annotation | -pa/--pilot-label-annotation |
-
-| TimeKeeper Level | Configures whether TimeKeeper Observer is optional | 1/0 | tasktide.engine.observer.timekeeper | -tk/--time-keeper |
-| TimeKeeper onStart | Configures whether TimeKeeper's onStart method can fail | true/false | tasktide.engine.observer.timekeeper.onStart | -tks/--time-keeper-onStart |
-| TimeKeeper onProcessing | Configures whether TimeKeeper's onProcessing method can fail | true/false | tasktide.engine.observer.timekeeper.onProcessing | -tkp/--time-keeper-onProcessing |
-| TimeKeeper onEnd | Configures whether TimeKeeper's onEnd method can fail | true/false | tasktide.engine.observer.timekeeper.onEnd | -tkse/--time-keeper-onEnd |
-
 ---
 
-### c). Manager Client Configurations
+<br>
 
-The manager client brings in task scheduling using the configured backend. Operations performed the Manager open these CURD actions via the configurable properties described below. While the TaskTide-ManagerClient can be used within ETL scripts to enqueue the next step for an active item, it's recommended to import through the file import ([example provided here](https://docs.tasktide.org/configs/nested-nslookup-tasks.txt)). 
+### b). Manager Client Configurations
+
+The manager client brings in task scheduling using the configured backend. Operations performed the Manager open these CURD actions via the configurable properties described below. While the TaskTide-ManagerClient can be used within ETL scripts to enqueue the next step for an active item, it's recommended to import through the file import ([example provided here](https://github.com/BrenKenna/TaskTide/blob/main/tasktide/core/src/test/resources/nestedTaskImports.txt)).
+
 <br>
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
@@ -125,16 +112,19 @@ The manager client brings in task scheduling using the configured backend. Opera
 | ItemId | ItemId over which the required ManagerAction is taken | SomeId | tasktide.manager.itemId | -ii/--item-id |
 | Query String | JSON formatted string | '{"Field": "Value"}' | tasktide.manager.queryString | -ii/--item-id |
 
+<br>
+
 ---
 
-### d). ItemStore Mutex Configuration
-
-The [Mutex](https://docs.tasktide.org/tasktide/mutex) library is used for as de-centralized operation queue for the [ItemStore Repository](https://docs.tasktide.org/itemstore).
 <br>
+
+### c). ItemStore Mutex Configuration
+
+The [Mutex](/tasktide/mutex/README.md) library is used for as de-centralized operation queue for the [ItemStore Repository](/tasktide/itemstore/README.md).
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|
-| Mutex Root Directory | Configures root directory for mutex | ~tasktide/mutex | tasktide.mutex.rootDir | -mrd/--mutex-root-dir |
+| Mutex Root Directory | Configures root directory for mutex | ~/tasktide/mutex | tasktide.mutex.rootDir | -mrd/--mutex-root-dir |
 | Mutex Stale File Threshold | Defines amount of miliseconds active leader is considered stale and deleted | 5 | tasktide.mutex.staleFileThreshold | -sft/--stale-file-threshold |
 | Mutex Retry Interval | Configures retry interval for TaskTide-Mutex | 550 | tasktide.mutex.retryInterval | -ri/--retry-interval |
 | Mutex Start Jitter | Configures minimum milliseconds wait time | 10-300L | tasktide.mutex.startJitter| -sj/--start-jitter |
@@ -142,12 +132,43 @@ The [Mutex](https://docs.tasktide.org/tasktide/mutex) library is used for as de-
 | Min Random Long | Configures value for maximum random long | 10-300L | tasktide.mutex.minRandomLong | -minri/--min-random-long |
 | Max Random Long | Configures value for maximum random long | 301-500L | tasktide.mutex.maxRandomLong | -maxri/--max-random-long |
 
+<br>
+
 ---
+
+### d). Engine Client Configurations
+
+The engine client brings in parallel task processing over the configured backend, with real-time updates being applied to throughout the life-cycle of a task. The below parameters can be used to adjust how TaskTide processes these tasks, such as which task collection, level of parallelism, its monitoring componenets etc. The only mandatory property is the Step property, which when a comma separated list is provided processes tasks from those workflow steps.
+
+
+| Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
+|--|--|--|--|--|
+| Worker Pool Size | Defines the number of engine workers | 2 | tasktide.engine.worker.threads.worker-pool-size | -w/--worker-pool-size |
+| ItemTask Threads | Defines the number of threads to recruit for ItemTask processing | 2 | tasktide.engine.worker.threads.itemTask | -i/--item-task-threads |
+| Worker Window Size | Defines the number of tasks polled from policy results | 10 | tasktide.engine.worker.window-size | -wws/--work-window-size |
+| Lock Wait Time | Configures wait time in seconds for locking an item | 5 | tasktide.engine.worker.lock-wait-time | -l/--lock-wait-time |
+| Process Executor Stream Directory | Log stream directory for Process Executor | ~/ | tasktide.engine.process-executor.stream-directory | -sd/--stream-directory |
+| Execution Policy | Engine execution policy | BATCH/SERVICE | tasktide.engine.execution-policy | -ep/--execution-policy |
+| Strategy Type | Specifies workflow acquisition strategy to use | SEQUENTIAL/ROUND ROBIN | tasktide.engine.policy.acquisition.workflow.strategy | -st/--strategy-type |
+| Acquisition Mode | Specifies acqusition mode for workflow strategy | EXHAUST/SCANNER | tasktide.engine.policy.acquisition.workflow.mode | -am/--acquisition-mode |
+| Pilot Label Key | CustomAnnotation key on WorkItem for early task binding to pilot job | MyAnnotationKey | tasktide.engine.pilot.label.key | -plk/--pilot-label-key |
+| Pilot Label Value | CustomAnnotation value on WorkItem for early task binding to pilot job | MyAnnotationValue | tasktide.engine.pilot.label.value | -plk/--pilot-label-key |
+| Pilot Label Annotation | JSON formatted CustomAnnotation | '{ "Key": "Anno Key", "Value": "GPU Target" }' | tasktide.engine.pilot.label.annotation | -pa/--pilot-label-annotation |
+| TimeKeeper Level | Configures whether TimeKeeper Observer is optional | 1/0 | tasktide.engine.observer.timekeeper | -tk/--time-keeper |
+| TimeKeeper onStart | Configures whether TimeKeeper's onStart method can fail | true/false | tasktide.engine.observer.timekeeper.onStart | -tks/--time-keeper-onStart |
+| TimeKeeper onProcessing | Configures whether TimeKeeper's onProcessing method can fail | true/false | tasktide.engine.observer.timekeeper.onProcessing | -tkp/--time-keeper-onProcessing |
+| TimeKeeper onEnd | Configures whether TimeKeeper's onEnd method can fail | true/false | tasktide.engine.observer.timekeeper.onEnd | -tkse/--time-keeper-onEnd |
+
+<br>
+
+---
+
+<br>
 
 ### e). Web API
 
-Configurations for the [RESTful API](https://docs.tasktide.org/tasktide/api). Further configurations for jersey, and glassfish can be passed down.
-<br>
+Configurations for the [RESTful API](/tasktide/api/README.md). Further configurations for jersey, and glassfish can be passed down.
+
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |
 |--|--|--|--|--|
