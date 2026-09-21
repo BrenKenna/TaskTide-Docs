@@ -14,7 +14,7 @@ The complete configuration for TaskTide is [provided here](/configs/microprofile
 
 <br>
 
-If using an SQL, or NoSQL backend then a microprofile-configuration file like the referenced [TaskTide Configuration File](/configs/microprofile-config.properties), defined by [SmallRyeConfig](https://smallrye.io/smallrye-config/Main/config/getting-started) must be used. Additionally, SQL databases also require the use of a Java Persistence API XML config like that [linked here](https://docs.tasktide.org/configs/persistence.xml). How to configure backend database for TaskTide is [described here](https://docs.tasktide.org/tasktide/tasktide/d#a-global-configurations).
+If using an SQL, or NoSQL backend then a microprofile-configuration file like the referenced [TaskTide Configuration File](/configs/microprofile-config.properties), defined by [SmallRyeConfig](https://smallrye.io/smallrye-config/Main/config/getting-started) must be used. Additionally, SQL databases also require the use of a Java Persistence API XML config like that [linked here](https://docs.tasktide.org/configs/persistence.xml). How to configure backend database for TaskTide is [described here](./#a-global-configurations).
 
 <br>
 
@@ -22,7 +22,9 @@ If using an SQL, or NoSQL backend then a microprofile-configuration file like th
 
 #### Command-Line Arguments
 
-Command-line arguments are used to configure which TaskTide-Client to run such as the Engine for task processing, the Manager for the registration, and management of tasks, or the WebAPI for service deployment. With this, TaskTide has properties that are configured "<i>globally</i>" like the specific backend to use, that are common for both the Manager, Engine, and WebAPI. In addition to this, each client has their own configuration that specific to it. For instance the Manager client has input/output files to coordinate its import/export operations. Whereas the Engine, has arguments for the number of threads to use for the parallel processing of TaskTide entities. The complete command-line arguments can be found by running "tasktide --help/-h". The [following link](.#e-web-api) directs to table text showing the same.
+Command-line arguments are used to configure which TaskTide-Client to run such as the Engine for task processing, the Manager for the registration, and management of tasks, or the WebAPI for service deployment. With this, TaskTide has properties that are configured "<i>globally</i>" like the specific backend to use, that are common for both the Manager, Engine, and WebAPI. In addition to this, each client has their own configuration that specific to it. For instance the Manager client has input/output files to coordinate its import/export operations. Whereas the Engine, has arguments for the number of threads to use for the parallel processing of TaskTide entities. The complete command-line arguments can be found by running "tasktide --help/-h".
+
+The following splits these arugments and configs per TaskTide library.
 
 <br>
 
