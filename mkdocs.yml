@@ -44,7 +44,7 @@ extra:
 
 theme:
   name: material
-  custom_dir: overrides
+  custom_dir: docs/overrides
 
   favicon: assets/logo1.jpg
   logo: assets/logo1.jpg
