@@ -4,6 +4,9 @@ The selected use cases were chosen to evaluate TaskTide's usability across vario
 
 A separate [use-case registry](https://use-cases.tasktide.org) is used to record community adoption of TaskTide, which maintains the core TaskTide use cases linked below.
 
+<p align="center">
+  <img src="/assets/tasktide-dev-approach" alt="TaskTide development approach"/>
+</p>
 <br>
 
 ---
