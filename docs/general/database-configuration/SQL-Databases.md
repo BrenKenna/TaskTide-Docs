@@ -1,6 +1,6 @@
 # Using SQL Databases for TaskTide
 
-The following is a guide for using SQL databases with TaskTide and outlined below. While provisioning RDBMS solutions is out of scope of TaskTide, it is suggested to follow standard [MariaDB Docker Instructions](https://hub.docker.com/_/mariadb). If an SQL backend is being used for TaskTide, then configuration of either [NoSQL backend](./NoSQL-Databases.md) or [ItemStore backend](./Embedded.md) is not required.
+The following is a guide for using SQL databases with TaskTide and outlined below. While provisioning RDBMS solutions is out of scope of TaskTide, it is suggested to follow standard [MariaDB Docker Instructions](https://hub.docker.com/_/mariadb). If an SQL backend is being used for TaskTide, then configuration of either [NoSQL backend](./NoSQL-Databases.md) or [ItemStore backend](./Embedded-Database.md) is not required.
 
 While maintenance is outside the scope of TaskTide, one resource for usable SQL database drivers is [JetBrains](https://www.jetbrains.com/datagrip/jdbc-drivers).
 
