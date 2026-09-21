@@ -9,10 +9,14 @@ The following describes how to:
 
 As a Java application TaskTide requires [java+17](https://docs.oracle.com/en/java/javase/).
 
+<br>
+
 ---
 
+<br>
+
 ## 1). Pre-compiled Application
-Each [TaskTide release](https://github.com/BrenKenna/TaskTide/releases/edit/v0.9.0) contains a zip og all TaskTide dependancies, wrapper scripts for running on linux/windows and configuration files which can be adjusted for the [target deployment strategy](/docs/documentation/Database-Driver-Installation.md).
+Each [TaskTide release](https://github.com/BrenKenna/TaskTide/releases/edit/v0.9.0) contains a zip o all TaskTide dependancies, wrapper scripts for running on linux/windows and configuration files which can be adjusted for the [target deployment strategy](/Database-Configuration).
 
 ``` bash
 # 1). Fetch zip
@@ -43,15 +47,18 @@ export TASKTIDE_CONFIG_FILE="$TASKTIDE_CONFIGS/META-INF/microprofile-config.prop
 export TASKTIDE_LOGGING="$TASKTIDE_CONFIGS/log4j2.xml"
 EOF
 ```
+
 <br>
 
 ---
 
+<br>
+
 ## 2). Run Docker Image
 
-To support deployment onto containerized platforms, a [docker file](/docker/tasktide-latest.Dockerfile) for caching TaskTide in local repository has been provided.
+To support deployment onto containerized platforms, a [docker file](https://github.com/BrenKenna/TaskTide/tree/main/docker/tasktide-latest.Dockerfile) for caching TaskTide in local repository has been provided.
 
-A second [docker file](/docker/tasktide-apptainer.Dockerfile) which installs [Apptainer](https://apptainer.org/) is also provided, to support running containerized workloads within TaskTide.
+A second [docker file](https://github.com/BrenKenna/TaskTide/tree/main/docker/tasktide-apptainer.Dockerfile) which installs [Apptainer](https://apptainer.org/) is also provided, to support running containerized workloads within TaskTide.
 
 Since the [public TaskTide images](https://docker.tasktide.org) form a part of TaskTide's CI/CD workflow. It is not recommended to build from source, but instead use those images.
 
@@ -69,7 +76,11 @@ docker container run --rm \
             < CLI Opts: >
 ```
 
+<br>
+
 ---
+
+<br>
 
 ## 3). Building from Source
 
@@ -77,7 +88,7 @@ Since the repository is packaged with a pre-compiled version of TaskTide, it is 
 
 Gradle wrapper scripts have been provided for both Windows & Linux in the event buliding from source is a requirement, or the repoistory is forked for development work. The following describes building TaskTide from source using Gradle.
 
-Different gradle installation scripts have been supplied which download and install gradle if necessary. Linux distributions should [run this script](/tasktide/gradlew), and Windows users should [run this script](/tasktide/gradlew.bat).
+Different gradle installation scripts have been supplied which download and install gradle if necessary. Linux distributions should [run this script](https://github.com/BrenKenna/TaskTide/tree/main/tasktide/gradlew), and Windows users should [run this script](https://github.com/BrenKenna/TaskTide/tree/main/tasktide/gradlew.bat).
 
 For context to the reader - The use of gradle build automation is optional, and would be more for development work with TaskTide using an IDE like NetBeans/Eclipse. These gradlew scripts open all of the build automation tooling such as assembly, TaskTide’s test taxonomy, and other build tasks thar supported its development.
 
@@ -117,7 +128,11 @@ EOF
 
 ```
 
+<br>
+
 ---
+
+<br>
 
 Since TaskTide ships with ready to go database drivers, the un-used driver set can be removed. Which also optimizes TaskTides startup time, and resource utilization. Please also note ***this is entirely an optional as TaskTide still works fine without doing this***. Future deployments may optimize this as it is largely from how Jakarta-NoSQL are loaded and is resolvable by clearing libs from classpath.
 

@@ -13,7 +13,11 @@ The following describes:
     <li>Applying configurations to the TaskTide config file</li>
 </ul>
 
+<br>
+
 ---
+
+<br>
 
 ## 1). Provision an Ephemeral MariaDB Instance
 
@@ -29,7 +33,11 @@ docker container run --rm \
     mariadb:latest
 ```
 
+<br>
+
 ---
+
+<br>
 
 ## 2). Install MariaDB JDBC
 
@@ -37,13 +45,17 @@ The following instructions are relative to the root folder of the [release zip](
 
 
 
-    1. Download the required JDBC, if not known they are available from JetBrains at [this link](https://download.jetbrains.com/idea/jdbc-drivers/web/mssql-12.8.1.zip) which downloads version 12.8.1. Then place that jar file into the "Tasktide-< VERSION >/lib" folder.
-    2. Optionally remove the unused <i>tasktide-< VERSION >/lib/"mysql-connector-j-8.0.33.jar</i>".
-    3. Optionally, remove the unused JNoSQL JARs from "tasktide-< VERSION >/lib/".
-    4. Adjust Microsoft SQL Server [template config file](/tasktide/docs/configs/microsoft-sql-config.properties) according to your deployment.
+1.  Download the required JDBC, if not known they are available from JetBrains at [this link](https://download.jetbrains.com/idea/jdbc-drivers/web/mssql-12.8.1.zip) which downloads version 12.8.1. Then place that jar file into the "Tasktide-< VERSION >/lib" folder.
+2.  Optionally remove the unused <i>tasktide-< VERSION >/lib/"mysql-connector-j-8.0.33.jar</i>".
+3.  Optionally, remove the unused JNoSQL JARs from "tasktide-< VERSION >/lib/".
+4.  Adjust Microsoft SQL Server [template config file](https://github.com/BrenKenna/TaskTide/blob/main/docs/configs/microsoft-sql-config.properties) according to your deployment.
 
+
+<br>
 
 ---
+
+<br>
 
 ## 3). Apply Ephemeral MariaDB Configs
 

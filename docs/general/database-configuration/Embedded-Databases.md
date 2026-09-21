@@ -12,6 +12,11 @@ The following describes:
     <li>Applying ItemStore configurations for TaskTide</li>
 </ul>
 
+<br>
+
+---
+
+<br>
 
 # 1). Using the ItemStore backend for TaskTide
 
@@ -19,7 +24,11 @@ Currently the [RocksDB](https://rocksdb.org/), and [SQLite](https://sqlite.org/)
 
 TaskTide uses a de-centralized semaphore for coordinating distributed read/writes, and separates each "***Workflows***, ***Steps***, and ***WorkItems***" data model to cater for future development. Meaning that core configurations of the ItemStore repository, and Mutex directories are stable, but specifics around them and directory structure is subject to change.
 
+<br>
+
 ---
+
+<br>
 
 # 2). Applying ItemStore configurations for TaskTide
 

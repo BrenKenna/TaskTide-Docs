@@ -16,7 +16,11 @@ The following describes:
     <li>Applying configurations to the TaskTide config file</li>
 </ul>
 
+<br>
+
 ---
+
+<br>
 
 ## 1). Provision an Ephemeral NoSQL Database
 
@@ -37,7 +41,11 @@ http://admin:password@localhost:5984/tasktide_database
 
 ```
 
+<br>
+
 ---
+
+<br>
 
 ## 2). Using Another NoSQL-Database Driver
 
@@ -64,11 +72,17 @@ curl -so tasktide-0.9.0/lib/jnosql-oracle-nosql-1.1.9.jar \
     https://repo1.maven.org/maven2/org/eclipse/jnosql/databases/jnosql-oracle-nosql/1.1.9/jnosql-oracle-nosql-1.1.9.jar
 ```
 
+<br>
+
+---
+
+<br>
+
 ## 3). Applying configurations to the TaskTide config file
 
 Database configuration is a ***global setting*** for TaskTide because all of the TaskTide APIs use it as their coordination layer. The Manager-API provides the TaskTide repository and CRUD operations against it, that the Engine-API uses for workload acquisition, and registering processing lifecycle events, and the Web-API by exposing the Manager-API through a RESTful interface.
 
-Note that the following is a minimal example for [couchDB](https://couchdb.apache.org/), should not be considered production, and should not be present in the [TaskTide Config File](/tasktide/tasktide/src/main/resources/META-INF/microprofile-config.properties) if either an SQL, or ItemStore backend are being used. Full NoSQL configurations can be found at the corresponding project [linked here](https://github.com/eclipse-jnosql/jnosql-databases) and are intentionally not bypassed with TaskTide so that available configurations stay relevant.
+Note that the following is a minimal example for [couchDB](https://couchdb.apache.org/), should not be considered production, and should not be present in the [TaskTide Config File](https://github.com/BrenKenna/TaskTide/blob/main/tasktide/tasktide/src/main/resources/META-INF/microprofile-config.properties) if either an SQL, or ItemStore backend are being used. Full NoSQL configurations can be found at the corresponding project [linked here](https://github.com/eclipse-jnosql/jnosql-databases) and are intentionally not bypassed with TaskTide so that available configurations stay relevant.
 
 
 | Property | Use | Example Value(s) | Config Parameter | Command-Line Parameter |

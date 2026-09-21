@@ -12,7 +12,11 @@ Please see the [following template](general/bug_report.md) for reporting issues,
 
 Before opening an issue, please check existing issues and documentation to avoid duplicates.
 
+<br>
 
+---
+
+<br>
 
 ## Feature Requests
 
@@ -27,6 +31,11 @@ Please describe:
 
 A feature request is a suggestion, not a commitment. The TaskTide project may decline, defer, or close requests that do not fit its scope, design, priorities, or intended use.
 
+<br>
+
+---
+
+<br>
 
 ## Scope
 
