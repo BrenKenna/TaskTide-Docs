@@ -62,7 +62,6 @@ theme:
 
   icon:
     repo:         fontawesome/brands/github
-    water-wave:   twemoji/water-wave
 
   language: en
 
